@@ -1,19 +1,70 @@
+/**
+ * Practice exercises on switch statements
+ */
+
 public class SwitchCase {
-    public static void main(String[] args) {
+    /**
+     * No fall through, expression.
+     * Determine both number of letters in the season name
+     * and suggests an activity
+     */
 
-        int day = 3 ;
+    public static int SeasonCounterExpression(String seasonName){
 
-        switch(day){
-            case 1:
-                System.out.println("Sunday");
+        // Expression with no fallthrough
+        return switch (seasonName) {
+            case "Spring" -> {
+                System.out.println("Spring flowers blooming!");
+                yield 6;
+            }
+            case "Summer", "Winter" -> 6;
+            case "Fall" -> 4;
+            default -> -1;
+        };
+    }
+
+    /**
+     * No fall through, statement.
+     * Determine both number of letters in the season name
+     * and suggests an activity
+     */
+    public static int SeasonCounterStatement(String seasonName){
+        int seasonLetters;
+        switch (seasonName){
+            case "Spring":
+            {
+                System.out.println("Spring flowers blooming!");
+                seasonLetters = 6;
                 break;
-            case 2:
-                System.out.println("Monday");
+            }
+            case "Summer", "Winter": {
+                seasonLetters = 6;
                 break;
-            case 3:
-                System.out.println("Tuesday");
+            }
+            case "Fall": {
+                seasonLetters = 4;
                 break;
+            }
+            default:
+                seasonLetters = -2;
         }
+        return seasonLetters;
+    }
+
+    /**
+     * Statement, Fall through
+     * Determine if the day is a weekday or weekend
+     */
+
+
+    public static void main(String[] args) {
+        // Expression no fallthrough
+        System.out.println(SeasonCounterExpression("Fall"));
+        // 4
+
+        // Statement no fallthrough
+        System.out.println(SeasonCounterStatement("invalid"));
+        // -2
 
     }
 }

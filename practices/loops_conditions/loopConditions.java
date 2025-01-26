@@ -12,9 +12,8 @@ public class loopConditions {
      * Print out counter
      */
     public static void iCounter(){
-        for (int i = 4; i <10 ; i++){
+        for (int i = 4; i <10 ; i++)
             System.out.printf("Counter: i = 2%d\t\t", i);
-        }
     }
 
     /**
