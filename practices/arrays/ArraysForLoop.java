@@ -1,6 +1,3 @@
-import java.util.Arrays;
-
-
 public class ArraysForLoop {
     /**
      * Create an array using for loop
